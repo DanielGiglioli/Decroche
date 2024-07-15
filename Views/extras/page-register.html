@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DeCroche</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" type="image/x-icon" href="../client-side/images/favicon.png" />
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+
+    <!-- Styles -->
+    <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+
+<body class="bg-primary">
+
+    <div class="unix-login">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="login-content">
+                        <div class="login-logo">
+                            <a href="../../index.html"><span><img src="../client-side/images/decrochea.png"  style=" object-fit: cover;"></span></a>
+                        </div>
+                        <div class="login-form">
+                            <form action="../../Controllers/registroUserExterno.php" method="POST" id="formularioRegistro">
+                            <h4>Registro de cliente</h4>
+                            <div class="row">
+                                <div class="form-group col-md-6">   
+                                    <label>Documento</label>
+                                    <input type="number" class="form-control" placeholder="Ej:102758694" name="documento"> 
+                                </div>
+                                <div class="form-group col-md-6"">
+                                    <label>Nombres</label>
+                                    <input type="text" class="form-control" placeholder="Ej:Jonh" name="nombres" id="nombres">
+                                </div>
+                                <div class="form-group col-md-6"">
+                                    <label>Apellidos</label>
+                                    <input type="text" class="form-control" placeholder="Ej:Giglioli" name="apellidos" id="apellidos">
+                                </div>
+                                <div class="form-group col-md-6"">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" name="email" placeholder="Ej:carolahindiaz@gmail.com"
+                                    id="email">
+                                </div>
+                                <div class="form-group col-md-6"">
+                                    <label>Clave</label>
+                                    <input type="password" class="form-control" name="clave"  placeholder="Ej:****" id="clave">
+                                </div>
+                                <div class="form-group col-md-6"">
+                                    <label>Confirmar clave</label>
+                                    <input type="password" class="form-control" name="cclave"   placeholder="Ej:****" id="cclave">
+                                </div>
+                                <div class="form-group col-md-6"">
+                                    <label>Rol</label>
+                                    <select name="rol" id="rol" class="form-control">
+                                        <option>Seleccione una opcion</option>
+                                        <option value="Cliente">Cliente</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="form-group col-md-6"">
+                                    <label>Estado</label>
+                                    <input type="text" class="form-control" name="" placeholder="Ej:activo">
+                                </div> -->
+                                <div class="form-group col-md-6"">
+                                    <label>Telefono</label>
+                                    <input type="number" class="form-control" name="telefono"   placeholder="Ej:3209925728" id="telefono">
+                                </div>
+                                <button type="button" href="page-login.html" class="btn btn-primary btn-flat m-b-30 m-t-30" onclick="registro()"">Registrar</button>
+                            </form>
+                            </div>
+                                
+                        
+                                <div class="register-link m-t-15 text-center">
+                                    <p>Ya tienes cuenta? <a href="page-login.html"> Ingresa</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="script.js"></script>
+    <script  src="../../animacion-inicio/categoria/dist/script.js"></script>
+    <script src='https://use.fontawesome.com/8ae46bccf5.js'></script><script  src="../../animacion-inicio/presentacion/dist/script.js"></script>
+</body>
+
+</html>

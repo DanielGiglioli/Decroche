@@ -8,7 +8,8 @@ function cargarProductosCliente(){
         echo "<h2>No hay productos registrados</h2>";
     } else {
         foreach ($result as $f) {
-            $foto = substr($f['foto'], 6); // Elimina los primeros seis caracteres de la URL de la foto
+            if ($f['stock'] >= 1) {
+                $foto = substr($f['foto'], 6); // Elimina los primeros seis caracteres de la URL de la foto
             echo '
             <div class="col-md-4">
 				<div class="product-item">
@@ -27,6 +28,7 @@ function cargarProductosCliente(){
 				</div>
 			</div>
             ';
+            }
         }
     }
 }
@@ -39,7 +41,8 @@ function cargarProductosCliente2(){
         echo "<h2>No hay productos registrados</h2>";
     } else {
         foreach ($result as $f) {
-            $foto = substr($f['foto'], 6);
+            if ($f['stock']>= 1) {
+                $foto = substr($f['foto'], 6);
             // Elimina los primeros seis caracteres de la URL de la foto
             if($f['estado'] == "Inactivo"){
 
@@ -60,6 +63,7 @@ function cargarProductosCliente2(){
                     </div>
                 </div>
             </div>';
+            }
             }
         
             

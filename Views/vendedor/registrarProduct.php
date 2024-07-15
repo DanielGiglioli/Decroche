@@ -88,11 +88,16 @@
                                     <input type="number" class="form-control" placeholder="Ej: 12.400" name="precio">
                                 </div>
                                 <div class="form-group col-md-6">
+                                    <label>Stock disponible:</label>
+                                    <input type="number" class="form-control"  name="stock">
+                                </div>
+                                
+                                <div class="form-group col-md-6">
                                     <label>Categoria</label>
                                     <select name="categoria" id="" class="form-control">
                                         <option value="ropa" >Seleccione una opcion</option>
                                         <option value="ropa">Ropa</option>
-                                        <option value="lanas">Lanas</option>
+                                      ion value="lanas">Lanas</option>
                                         <option value="articulos">Articulos de costura</option>
                                         <option value="patrones">Patrones</option>
                                     </select>

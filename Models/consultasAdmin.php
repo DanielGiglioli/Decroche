@@ -702,7 +702,7 @@
 
         echo 'exito';
 
-   }
+    }
 
    public function actualizarUsuario($id,$rol, $nombres,$apellidos, $email,$telefono,$estado){
 

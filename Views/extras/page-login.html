@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DeCroche</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" type="image/x-icon" href="../client-side/images/favicon.png" />
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+    
+
+    <!-- Styles -->
+    <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+<body class="bg-primary">
+
+    <div class="unix-login">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="login-content">
+                        <div class="login-logo">
+                            <a href="../../index.php"><span><img src="../client-side/images/decrochea.png"  ></span></a>
+                        </div>
+                        <div class="login-form">
+                            <h4>Iniciar sesión</h4>
+                            <form action="../../Controllers/iniciarSesion.php" method="POST" id="formularioLogueo">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Email" id="correoLogueo">
+                                </div>
+                                <div class="form-group">
+                                    <label>Contraseña</label>
+                                    <input type="password" name="clave" class="form-control" placeholder="Password" id="contraseñaLogueo">
+                                </div>
+                                <div class="checkbox">
+                                    
+                                    <label class="pull-right">
+										<a href="page-reset-password.html">Olvidaste tu contraseña?</a>
+									</label>
+
+                                </div>
+                                <button type="button" class="btn btn-primary btn-flat m-b-30 m-t-30" id="btnIniciarSesion" onclick="logueo();">Iniciar sesión</button>
+
+                                
+                                <div class="register-link m-t-15 text-center">
+                                    <p>No tienes una cuenta ? <a href="page-register.html"> Registrate</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="./sesion.js"></script>
+
+</body>
+
+</html>

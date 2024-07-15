@@ -140,7 +140,7 @@ class ConsultasVendedor{
         
     }
 
-    public function registrarProduct($nombre, $categoria, $precio, $proveedor, $rutaFoto,$rutaFoto2, $rutaFoto3, $fecha_creacion,$estado, $id_vendedor){
+    public function registrarProduct($nombre, $categoria, $precio, $proveedor, $rutaFoto,$rutaFoto2, $rutaFoto3, $fecha_creacion,$estado, $id_vendedor, $stock){
         //Creamos el objeto de la clase conexion
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -149,7 +149,7 @@ class ConsultasVendedor{
         
         
         //Guardamos la variable en la consulta MSQL a ejecutar
-        $insertar = "INSERT INTO products(nombre,categoria,precio,proveedor,foto,fecha_creacion,estado, id_vendedor, foto2, foto3) VALUES(:nombre,:categoria,:precio,:proveedor,:foto,:fecha_creacion,:estado,:id_vendedor, :foto2, :foto3)";
+        $insertar = "INSERT INTO products(nombre,categoria,precio,proveedor,foto,fecha_creacion,estado, id_vendedor, foto2, foto3, stock) VALUES(:nombre,:categoria,:precio,:proveedor,:foto,:fecha_creacion,:estado,:id_vendedor, :foto2, :foto3, :stock)";
 
 
 
@@ -164,6 +164,7 @@ class ConsultasVendedor{
         $result->bindParam(':foto3',$rutaFoto3);
         $result->bindParam(':fecha_creacion',$fecha_creacion);
         $result->bindParam(':estado',$estado);
+        $result->bindParam(':stock',$stock);
         $result->bindParam(':id_vendedor',$id_vendedor);
 
         $result->execute();
@@ -240,6 +241,27 @@ class ConsultasVendedor{
 
         }return $f;
 
+    }
+
+    public function actualizarProducto($id_pro, $nombre, $estado, $categoria, $precio, $proveedor, $stock ){
+
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar= "UPDATE products SET nombre=:nombre, estado = :estado, categoria = :categoria, precio = :precio, proveedor=:proveedor, stock=:stock WHERE id_pro=:id_pro";
+        
+        $result= $conexion-> prepare($actualizar);
+        $result ->bindParam(":id_pro", $id_pro);
+        $result ->bindParam(":nombre", $nombre);
+        $result ->bindParam(":estado", $estado);
+        $result ->bindParam(":categoria", $categoria);
+        $result ->bindParam(":precio", $precio);
+        $result ->bindParam(":proveedor", $proveedor);
+        $result ->bindParam(":stock", $stock);
+
+        $result->execute();
+
+        echo 'exito';
     }
     
 }

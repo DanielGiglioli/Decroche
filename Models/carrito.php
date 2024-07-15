@@ -47,7 +47,6 @@
 
 </script>
 
-
     <?php
 
     session_start();
@@ -78,13 +77,19 @@
                     $cantidad = openssl_decrypt($_POST["cantidad"], COD,KEY);
                     $mensaje.= "La cantidad es correcta: ".$cantidad."<br/>";
                 }else{$mensaje.= "La cantidad no es correcta"."<br/>"; break;}
+                if(is_numeric(openssl_decrypt($_POST["stock"], COD,KEY))){
+                    $stock = openssl_decrypt($_POST["stock"], COD,KEY);
+                    $mensaje.= "El stock es correcta: ".$cantidad."<br/>";
+                }else{$mensaje.= "La cantidad no es correcta"."<br/>"; break;}
+                
 
                 if(!isset($_SESSION['carrito'])){
                     $producto=array(
                         'id_pro' =>$id_pro,
                         'nombre'=>$nombre,
                         'precio'=>$precio,
-                        'cantidad'=>$cantidad
+                        'cantidad'=>$cantidad,
+                        'stock'=>$stock
                     );
                     $_SESSION['carrito'][0]=$producto;
                     echo '<script>
@@ -105,7 +110,8 @@
                         'id_pro' =>$id_pro,
                         'nombre'=>$nombre,
                         'precio'=>$precio,
-                        'cantidad'=>$cantidad
+                        'cantidad'=>$cantidad,
+                        'stock'=>$stock
                     );
                     $_SESSION['carrito'][$numeroProductos]=$producto;
                     echo '<script>
@@ -137,7 +143,7 @@
             
                     foreach ($_SESSION['carrito'] as $indice => &$producto) {
                         if ($producto['id_pro'] == $id_pro) {
-                            if($producto['cantidad'] < 20){
+                            if($producto['cantidad'] < $producto['stock']){
                                 $producto['cantidad']++; 
                                 //no contar mas si llega a 20
                             }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Animated Carousel on CSS with Minimal JS</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoGo</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'><link rel='stylesheet' href='https://dl.dropboxusercontent.com/u/69747888/MoGo%20carousel/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Playfair+Display:700|Raleway:500.700'><link rel="stylesheet" href="../../parallax-depth-cards/dist/style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <header class="main-header">
+    <div class="header-wrapper">
+      <div class="main-logo">DeCroche</div>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="#section-2">Registrarse</a></li>
+          <li><a href="#section-5">compra</a></li>
+          <li><a href="#section-7">Equipo</a></li>
+          <li><a href="#section-9">Blog</a></li>
+          <li><a href="#main-footer">quejas</a></li>
+          <li><a href="#"><span class="fa fa-shopping-cart"></span></a></li>
+          <li><a href="#"><span class="fa fa-search"></span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="section-1">
+    <div class="content-slider">
+      <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+      <input type="radio" id="banner2" class="sec-1-input" name="banner">
+      <input type="radio" id="banner3" class="sec-1-input" name="banner">
+      <input type="radio" id="banner4" class="sec-1-input" name="banner">
+      <div class="slider">
+        <div id="top-banner-1" class="banner">
+          <div class="banner-inner-wrapper">
+            <h3>Los mejores articulos para tu comodidad</h3>
+            <h2>Bienvenido a<br>DeCroche</h2>
+            <div class="line"></div>
+            <div class="learn-more-button"><a href="#section-2">Busca más</a></div>
+          </div>
+        </div>
+        <div id="top-banner-2" class="banner">
+          <div class="banner-inner-wrapper">
+            <h3>Tejidos de tradicion</h3>
+            <h2>Uniendo Hilos <br>Creativos</h2>
+            <div class="line"></div>
+            <div class="learn-more-button"><a href="#section-4">Secciones</a></div>
+          </div>
+        </div>
+        <div id="top-banner-3" class="banner">
+          <div class="banner-inner-wrapper">
+            <h3>Guardamos lo que necesitas</h3>
+            <h2>Accede a tu <br> historial</h2>
+            <div class="line"></div>
+            <div class="learn-more-button"><a href="#section-6">Historial</a></div>
+          </div>
+        </div>
+        <div id="top-banner-4" class="banner">
+          <div class="banner-inner-wrapper">
+            <h3>Hilos de vida</h3>
+            <h2>Cada puntada <br> cuenta en el tejido <br> de nuestras vidas</h2>
+            <div class="line"></div>
+            <div class="learn-more-button"><a href="#main-footer">Ver productos top</a></div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="controls">
+          <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span>01</span> ㅤLo mejor</label>
+          <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span>02</span> ㅤㅤEsta en</label>
+          <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span>03</span> ㅤDeCroche,</label>
+          <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span>04</span> ㅤdisfrutalo</label>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <div id="app" class="container">
+    <card data-image="https://raw.githubusercontent.com/chechojgb/images/main/1.jpg">
+      <h1 slot="header">Ropa de lana</h1>
+      <p slot="content">Encuentra lo mejor en ropa aqui.</p>
+    </card>
+    <card data-image="https://raw.githubusercontent.com/chechojgb/images/main/2.jpg">
+      <h1 slot="header">Lana</h1>
+      <p slot="content">De todos los estilos y colores, para que estes comodo con tus gustos.</p>
+    </card>
+    <card data-image="https://raw.githubusercontent.com/chechojgb/images/main/3.jpg">
+      <h1 slot="header">Articulos de costura</h1>
+      <p slot="content">Articulos para ayudarte a fabricar tus propios productos.</p>
+    </card>
+    <card data-image="https://raw.githubusercontent.com/chechojgb/images/main/4.jpeg">
+      <h1 slot="header">Patrones</h1>
+      <p slot="content">Dale vida a tus sueños de moda con nuestros patrones exquisitamente diseñados..</p>
+    </card>
+  </div>
+
+
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://use.fontawesome.com/8ae46bccf5.js'></script><script  src="./script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script><script  src="../../parallax-depth-cards/dist/script.js"></script>
+
+</body>
+</html>

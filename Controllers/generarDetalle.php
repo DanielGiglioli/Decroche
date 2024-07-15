@@ -71,23 +71,31 @@ function generarDetalle(){
                                 <div class="col-lg-6">
                                     <h4 class="fw-bold mb-3">'.$f['nombre'].'</h4>
                                     <p class="mb-3">Categoria:'.$f['categoria'].'</p>
-                                    <h5 class="fw-bold mb-3">'.number_format($f['precio'], 0  ,'', '.').' $</h5>';
+                                    <h5 class="fw-bold mb-3">'.number_format($f['precio'], 0  ,'', '.').' $</h5>
+                                    <h6 class="fw-bold mb-3"><strong>'.$f['stock'].'</strong> cantidades disponibles</h6>';
+                                    
 
 
                                 mostrarCalificacion();
                                 echo '
                                     
                                     <p class="mb-4">'.$f['descripcion'].'</p>
-    
 
+                                    <p class="mb-4">Vendido por: <strong>'.$f['proveedor'].'</strong></p>';
 
-                                    <form action="" method="post">
+                                    
+                                    if ($f['stock'] >= 1) {
+                                        echo '<form action="" method="post">
                                         <input type="hidden" name="id_pro" value="'.openssl_encrypt($f['id_pro'], COD, KEY).'">
                                         <input type="hidden" name="precio" value="'.openssl_encrypt($f['precio'], COD, KEY).'">
                                         <input type="hidden" name="nombre" value="'.openssl_encrypt($f['nombre'], COD, KEY).'">
+                                        <input type="hidden" name="stock" value="'.openssl_encrypt($f['stock'], COD, KEY).'">
                                         <input type="hidden" name="cantidad" value="'.openssl_encrypt(1, COD, KEY).'">
                                         <button type="submit"  name="accion" value="agregar" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i class="fa fa-shopping-bag me-2 text-primarys" ></i > Añadir al carrito</a> 
-                                    </form>
+                                    </form>';
+                                    }
+                                echo'
+                                    
                                 </div>
                 </div>
                 

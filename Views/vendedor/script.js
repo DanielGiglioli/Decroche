@@ -32,6 +32,7 @@ function editarProducto(id_pro) {
             document.getElementById('categoria').value = data.categoria;
             document.getElementById('precio').value = data.precio;
             document.getElementById('proveedor').value = data.proveedor;
+            document.getElementById('stock').value = data.stock;
         })
         .catch(error => console.error('Error al obtener producto por ID:', error));
         console.log(id_pro);
@@ -46,12 +47,13 @@ document.getElementById('form_editar_servicios').addEventListener('submit', func
     const estado = document.getElementById("estado").value;
     const categoria = document.getElementById("categoria").value;
     const precio = document.getElementById("precio").value;
+    const stock = document.getElementById("stock").value;
     const proveedor = document.getElementById("proveedor").value;
 
 
     console.log(id_pro, estado);
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../../Controllers/Administrador/editar_producto.php', true);
+    xhr.open('POST', '../../Controllers/Vendedor/editar_producto.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
     xhr.onload = function() {
@@ -72,6 +74,6 @@ document.getElementById('form_editar_servicios').addEventListener('submit', func
     };
     
     // Enviar los datos del formulario al servidor
-    xhr.send(`id_pro=${id_pro}&nombre=${nombre}&estado=${estado}&categoria=${categoria}&precio=${precio}&proveedor=${proveedor}`);
+    xhr.send(`id_pro=${id_pro}&nombre=${nombre}&estado=${estado}&categoria=${categoria}&precio=${precio}&proveedor=${proveedor}&stock=${stock}`);
 
 });

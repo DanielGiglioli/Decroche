@@ -141,6 +141,11 @@
                             <td><input type="text" id="proveedor" name="proveedor"></td>
                         </tr>
                         <tr>
+                            <td><label for="stock">cantidad disponible:</label></td>
+                            <td><input type="text" id="stock" name="stock"></td>
+                        </tr>
+
+                        <tr>
                             <td><label for="estado">Estado:</label></td>
                             <td><select class=""  name="estado" id="estado" style="width: -webkit-fill-available; padding: 10px;" id="detalle">
                                 <option value="Activo">Activo</option>

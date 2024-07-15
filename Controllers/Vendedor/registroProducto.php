@@ -9,6 +9,7 @@ session_start();
 $id_vendedor = $_SESSION['id'];
 $nombre = $_POST ["nombre"];
 $categoria = $_POST ["categoria"];
+$stock = $_POST ["stock"];
 $precio = $_POST ["precio"];
 $proveedor = $_POST ["proveedor"];
 $rutaFoto= "../../Uploads/users/".$_FILES['foto']['name'];
@@ -23,7 +24,7 @@ $estado = $_POST ['estado'];
 
     // creamos el objeto apartir de la clase consultas para enviar los datos a una funcion en especifico
     $objConsultas = new ConsultasVendedor();
-    $result = $objConsultas->registrarProduct($nombre, $categoria, $precio, $proveedor, $rutaFoto,$rutaFoto2, $rutaFoto3, $fecha_creacion,$estado, $id_vendedor);
+    $result = $objConsultas->registrarProduct($nombre, $categoria, $precio, $proveedor, $rutaFoto,$rutaFoto2, $rutaFoto3, $fecha_creacion,$estado, $id_vendedor, $stock);
 
 
 ?>

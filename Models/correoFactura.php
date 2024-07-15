@@ -85,6 +85,34 @@ class correoFactura{
             }
         }
 
+
+		foreach ($_SESSION['carrito'] as $producto) {
+            $cantidad = $producto['cantidad'];
+            $id_pro = $producto['id_pro'];
+
+            // Primero, obtener el stock actual del producto
+            $queryStock = "SELECT stock FROM products WHERE id_pro = :id_pro";
+            $resultStock = $conexion->prepare($queryStock);
+            $resultStock->bindParam(":id_pro", $id_pro);
+            $resultStock->execute();
+            $currentStock = $resultStock->fetch(PDO::FETCH_ASSOC)['stock'];
+
+            if ($currentStock !== false) {
+                // Calcular el nuevo stock
+                $newStock = $currentStock - $cantidad;
+
+                // Actualizar el stock en la base de datos
+                $actualizarStock = "UPDATE products SET stock = :stock WHERE id_pro = :id_pro";
+                $resultUpdateStock = $conexion->prepare($actualizarStock);
+                $resultUpdateStock->bindParam(":stock", $newStock);
+                $resultUpdateStock->bindParam(":id_pro", $id_pro);
+                $resultUpdateStock->execute();
+            } else {
+                // Manejo de error si no se encuentra el producto
+                echo "Producto no encontrado para el ID $id_pro";
+            }
+        }
+		
         
 
 
